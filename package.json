@@ -1,0 +1,36 @@
+{
+  "name": "web3-storage-upload-file-action",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "license": "(Apache-2.0 AND MIT)",
+  "description": "Upload a file to web3.storage",
+  "repository": "filecoin-station/web3-storage-upload-file-action",
+  "scripts": {
+    "test": "standard",
+    "build": "ncc build index.js",
+    "version": "npm run build && git add dist",
+    "release": "np && git tag -f v0 && git push --tags -f"
+  },
+  "np": {
+    "publish": false
+  },
+  "standard": {
+    "ignore": [
+      "dist"
+    ]
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@ipld/car": "^5.2.6",
+    "@ucanto/core": "^9.0.1",
+    "@ucanto/principal": "^9.0.0",
+    "@web3-storage/w3up-client": "^12.3.0",
+    "files-from-path": "^1.0.4"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.1",
+    "np": "^9.2.0",
+    "standard": "^17.1.0"
+  }
+}

@@ -1,0 +1,16 @@
+name: Web3.Storage Upload File Action
+author: filecoin-station
+description: 'Upload a file to web3.storage'
+branding:
+  icon: 'folder-plus'
+  color: purple
+inputs:
+  path:
+    description: 'Path to the file'
+  private-key:
+    description: 'Private key for web3.storage'
+  proof:
+    description: 'Proof for web3.storage'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
