@@ -27,7 +27,7 @@ const main = async () => {
 
   const cid = await web3Storage.uploadFile((await filesFromPaths([path]))[0])
   console.log(`Uploaded as ${cid}`)
-  core.setOutput('cid', cid.toString())
+  // core.setOutput('cid', cid.toString())
 }
 
 main().catch(err => core.setFailed(err.message))
