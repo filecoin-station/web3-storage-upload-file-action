@@ -17,4 +17,5 @@ jobs:
           proof: ${{ secrets.PROOF }}
       - run: |
           echo "cid: ${{ steps.upload.outputs.cid }}"
-          [[ -z "${{ steps.upload.outputs.cid }}" ]] && { echo "CID is empty" ; exit 1; }
+      - run: exit 1
+        if: ${{ !steps.upload.outputs.cid }}
