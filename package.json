@@ -2,7 +2,7 @@
   "name": "web3-storage-upload-file-action",
   "private": true,
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "(Apache-2.0 AND MIT)",
   "description": "Upload a file to web3.storage",
   "repository": "filecoin-station/web3-storage-upload-file-action",

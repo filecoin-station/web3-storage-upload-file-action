@@ -33096,6 +33096,9 @@ function httpRedirectFetch (fetchParams, response) {
     // https://fetch.spec.whatwg.org/#cors-non-wildcard-request-header-name
     request.headersList.delete('authorization')
 
+    // https://fetch.spec.whatwg.org/#authentication-entries
+    request.headersList.delete('proxy-authorization', true)
+
     // "Cookie" and "Host" are forbidden request-headers, which undici doesn't implement.
     request.headersList.delete('cookie')
     request.headersList.delete('host')
@@ -98081,7 +98084,7 @@ const index_main = async () => {
 
   const cid = await web3Storage.uploadFile((await filesFromPaths([path]))[0])
   console.log(`Uploaded as ${cid}`)
-  core.setOutput('cid', cid)
+  core.setOutput('cid', cid.toString())
 }
 
 index_main().catch(err => core.setFailed(err.message))
